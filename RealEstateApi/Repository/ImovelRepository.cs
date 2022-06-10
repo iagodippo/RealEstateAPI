@@ -111,7 +111,7 @@ namespace RealEstateApi.Repository
         public ImovelModel Update(ImovelModel imovel)
         {
             var newImovel = new ImovelModel();
-            int id = newImovel.Id;
+            int id = imovel.Id;
             try
             {
                 using (var client = new HttpClient())
