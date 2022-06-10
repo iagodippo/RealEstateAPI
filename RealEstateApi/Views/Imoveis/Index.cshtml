@@ -1,0 +1,95 @@
+﻿@model IEnumerable<RealEstateApi.Models.ImovelModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Imóveis</h1>
+
+<p>
+    <a asp-action="Create">Adicionar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoDoImovel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorDeVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorDeLocacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complemento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cep)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDoImovel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorDeVenda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorDeLocacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complemento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cep)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {id=item.Id}) |
+                @Html.ActionLink("Detalhes", "Details", new {id=item.Id}) |
+                @Html.ActionLink("Deletar", "Delete", new {id=item.Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
